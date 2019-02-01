@@ -1,4 +1,4 @@
-package soundsystem;
+package chapter2.soundsystem;
 
 import static org.junit.Assert.*;
 

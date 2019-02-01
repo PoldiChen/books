@@ -1,4 +1,4 @@
-package soundsystem;
+package chapter2.soundsystem;
 
 public interface CompactDisc {
 	

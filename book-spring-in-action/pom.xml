@@ -4,7 +4,7 @@
   <artifactId>test</artifactId>
   <version>0.0.1</version>
   <packaging>war</packaging>
-  <name>spring-in-action</name>
+  <name>book-spring-in-action</name>
   <build>
     <plugins>
       <plugin>
@@ -61,6 +61,12 @@
     <artifactId>system-rules</artifactId>
     <version>1.19.0</version>
     <scope>test</scope>
+</dependency>
+
+<dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjrt</artifactId>
+    <version>1.9.2</version>
 </dependency>
 
   </dependencies>
