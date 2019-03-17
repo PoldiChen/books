@@ -188,11 +188,39 @@ public class Application {
 46.通过使用Spring Cloud Config服务器，可以动态的重新加载路由映射，无需重启Zuul服务。
 
 #### 第7章 保护微服务
-47.
+47.OAuth2是一个基于令牌的框架，允许用户使用第三方验证服务进行验证，验证成功后会出示一个令牌，该令牌必须与每个请求一起发送，验证服务对令牌进行确认。<br>
 
+48.OAuth2将安全性分为4个部分：
+(1) 受保护的资源
+(2) 资源所有者
+(3) 应用程序
+(4) OAuth2验证服务器
 
+49.OAuth2规范具有4种类型的授权：
+(1) 密码
+(2) 客户端凭据
+(3) 授权码
+(4) 隐式
 
+50.建立OAuth2验证服务，配置Spring，Spring Cloud安全库，Spring OAuth2库。
+```xml
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-security</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.security.oauth</groupId>
+    <artifactId>spring-security-oauth2</artifactId>
+</dependency>
+```
 
+51.使用注解启用OAuth2服务：
+```java
+@EnableAuthorizationServer
+```
+
+#### 第8章 使用Spring Cloud Stream的事件驱动架构
+52.
 
 
 
