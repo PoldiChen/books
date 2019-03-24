@@ -220,15 +220,54 @@ public class Application {
 ```
 
 #### 第8章 使用Spring Cloud Stream的事件驱动架构
-52.
+52.使用异步消息在应用程序之间进行通信，这些消息代表了状态的变化，这个概念称为事件驱动架构，或消息驱动架构。
 
+52.Spring Cloud通过Spring Cloud Stream子项目使构建基于消息传递的解决方案变得轻而易举。
 
+53.当需要传递状态时，消息队列充当不同服务之间的中介，有4个好处：
+- 松耦合
+- 耐久性
+- 可伸缩性
+- 灵活性
 
+54.随着Spring Cloud中消息的发布和消费，有4个组件涉及发布消息和消费消息：
+- 发射器<br>
+一个Spring注解接口，接收一个普通Java对象(POJO)，该对象代表要发布的消息。
+- 通道<br>
+对队列的一个抽象
+- 绑定器
+- 接收器
 
+55.生产消息的服务中添加以下依赖和注解：
+```xml
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-stream</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-stream-kafka</artifactId>
+</dependency>
+```
+```java
+@EnableBinding(Source.class)
+```
 
+56.添加依赖使用Redis：
+```xml
+<dependency>
+    <groupId>org.springframework.data</groupId>
+    <artifactId>spring-data-redis</artifactId>
+</dependency>
+<dependency>
+    <groupId>redis.clients</groupId>
+    <artifactId>jedis</artifactId>
+</dependency>
+```
 
+#### 第9章 使用Spring Cloud Sleuth和Zipkin进行分布式跟踪
 
-
+#### 第10章 部署微服务
 
 
 
