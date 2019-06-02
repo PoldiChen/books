@@ -149,6 +149,30 @@ HVALS | 获取所有的value
 HINCRBY | 对key对应的value加1
 HINCRBYFLOAT | 对key对应的value加一个浮点数
 
+18.有序集合的其他命令：
+
+命令 | 行为
+-|-
+ZCARD | 返回包含的成员数量
+ZINCRBY | 将成员的分值加上increment
+ZCOUNT | 返回分值介于max和min之间的成员数量
+ZRANK | 返回成员在集合中的排名
+ZSCORE | 返回成员的分值
+
+19.有序集合的范围型数据命令:
+
+命令 | 行为
+-|-
+ZREVRANK |
+ZREVRANGE |
+ZRANGEBYSCORE |
+ZREVRANGEBYSCORE |
+ZREMRANGEBYRANK |
+ZREMRANGEBYSCORE |
+ZINTERSTORE |
+ZUNIONSTORE |
+
+20.发布与订阅
 
 
 
