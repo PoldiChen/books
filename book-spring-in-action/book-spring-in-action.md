@@ -2,7 +2,7 @@
 some notes and codes for the book Spring in Action (Fourth Edition).
 
 #### 第1章 Spring之旅
-1.为了降低Java开发的复杂性，Spring采取了以下四种关键策略：
+1.为了降低Java开发的复杂性，Spring采取了以下四种关键策略：<br>
 (1)	基于POJO的轻量级和最小侵入性编程<br>
 (2)	基于依赖注入和面向接口实现松耦合<br>
 (3)	基于切面和惯例进行声明式编程<br>
@@ -14,26 +14,33 @@ some notes and codes for the book Spring in Action (Fourth Edition).
 
 4.依赖注入的方式之一，构造器注入。
 
-5.依赖注入的最大收益—松耦合。如果一个对象只通过接口（而不是具体实现或初始化过程）来表明依赖关系，那么这种依赖就能在对象本身毫不知情的情况下，用不同的具体实现进行替换。
+5.依赖注入的最大收益—松耦合。<br>
+如果一个对象只通过接口（而不是具体实现或初始化过程）来表明依赖关系，那么这种依赖就能在对象本身毫不知情的情况下，用不同的具体实现进行替换。
 
-6.创建应用组件之间协作的行为通常称为装配（wiring）。Spring有多种装配bean的方式，XML是其中常见的一种。
+6.创建应用组件之间协作的行为通常称为装配（wiring）。<br>
+Spring有多种装配bean的方式，XML是其中常见的一种。
 
-7.Sping通过应用上下文（Application Context）装载bean的定义并把它们组装起来。Spring应用上下文全权负责对象的创建和组装。
+7.Sping通过应用上下文（Application Context）装载bean的定义并把它们组装起来。<br>
+Spring应用上下文全权负责对象的创建和组装。
 
-8.Spring自带了多种应用上下文的实现方式，主要的区别在于如何加载配置。
-AnnotationConfigApplicationContext：从一个或多个基于Java的配置类中加载Spring应用上下文。
-AnnotationConfigWebApplicationContext：从一个或多个基于Java的配置类中加载Spring Web应用上下文。
-ClassPathXmlApplicationContext：从类路径下的一个或多个XML配置文件中加载上下文定义，把应用上下文的定义文件作为类资源。
-FileSystemXmlApplicationContext：从文件系统下的一个或多个XML配置文件中加载上下文定义。
+8.Spring自带了多种应用上下文的实现方式，主要的区别在于如何加载配置。<br>
+AnnotationConfigApplicationContext：从一个或多个基于Java的配置类中加载Spring应用上下文。<br>
+AnnotationConfigWebApplicationContext：从一个或多个基于Java的配置类中加载Spring Web应用上下文。<br>
+ClassPathXmlApplicationContext：从类路径下的一个或多个XML配置文件中加载上下文定义，把应用上下文的定义文件作为类资源。<br>
+FileSystemXmlApplicationContext：从文件系统下的一个或多个XML配置文件中加载上下文定义。<br>
 XmlWebApplicationContext：从web应用下的一个或多个XML配置文件中加载上下文定义。
 
-9.面向切面（aspect-oriented programming, AOP）允许把遍布应用各处的功能分离出来形成可重用的组件。面向切面往往被定义为促使软件系统实现关注点分离的一项技术。
+9.面向切面（aspect-oriented programming, AOP）允许把遍布应用各处的功能分离出来形成可重用的组件。<br>
+面向切面往往被定义为促使软件系统实现关注点分离的一项技术。
 
-10.在基于Spring的应用中，应用对象生存于Spring容器（container）中。Spring容器负责创建对象、装配它们、配置它们并管理它们的整个生命周期，从生存到死亡（new到finalize()）。
+10.在基于Spring的应用中，应用对象生存于Spring容器（container）中。<br>
+Spring容器负责创建对象、装配它们、配置它们并管理它们的整个生命周期，从生存到死亡（从new到finalize()）。
 
-11.Spring容器并不是只有一个。Spring自带了多个容器实现，可以归纳为两种不同的类型。bean工厂（由org.springframework.beans.factory.eanFactory接口定义）是最简单的容器，提供基本的DI支持。应用上下文（由org.springframework.context.ApplicationContext接口定义）基于BeanFactory构建，并提供应用框架级别的的服务。
+11.Spring容器并不是只有一个。Spring自带了多个容器实现，可以归纳为两种不同的类型。<br>
+bean工厂（由org.springframework.beans.factory.BeanFactory接口定义）是最简单的容器，提供基本的DI支持。<br>
+应用上下文（由org.springframework.context.ApplicationContext接口定义）基于BeanFactory构建，并提供应用框架级别的的服务。<br>
 
-12.bean的生命周期。<br>
+12.bean的生命周期<br>
 (1)	实例化<br>
 (2)	填充属性<br>
 (3)	调用BeanNameAware的setBeanName()方法<br>
@@ -49,7 +56,7 @@ XmlWebApplicationContext：从web应用下的一个或多个XML配置文件中�
 (13)	调用自定义的销毁方法<br>
 (14)	结束<br>
 
-13.Spring核心容器，包括Beans, Core, Context, Expression, Context support。
+13.Spring核心容器，包括Beans, Core, Context, Expression, Context support。<br>
 容器是Spring框架最核心的部分，它管理着Spring应用中bean的创建、配置和管理。<br>
 
 #### 第2章 装配Bean
@@ -88,7 +95,8 @@ XmlWebApplicationContext：从web应用下的一个或多个XML配置文件中�
 </beans>
 ```
 
-22.默认情况下，Spring应用上下文中所有bean都是以单例形式创建的。但有些类是易变的（mutable），会保持一些状态，因此重用是不安全的，这种情况下就不能声明为单例。
+22.默认情况下，Spring应用上下文中所有bean都是以单例形式创建的。<br>
+但有些类是易变的（mutable），会保持一些状态，因此重用是不安全的，这种情况下就不能声明为单例。
 
 23.Spring定义了多种作用域，可以基于这些作用域创建bean，包括：<br>
 单例（Singleton）：在整个应用中，只创建bean的一个实例<br>
@@ -107,7 +115,8 @@ public class NotePad { ... }
 ```
 
 #### 第4章 面向切面的Spring
-24.在软件开发中，散布于应用中多处的功能被称为横切关注点（cross-cutting concern）。通常来讲，这些横切关注点从概念上是与应用的业务逻辑分离的，如何分离正是面向切面编程（AOP）要解决的问题。
+24.在软件开发中，散布于应用中多处的功能被称为横切关注点（cross-cutting concern）。<br>
+通常来讲，这些横切关注点从概念上是与应用的业务逻辑分离的，如何分离正是面向切面编程（AOP）要解决的问题。
 
 25.切面适用于多个场景，包括日志、安全、声明式事务、缓存。
 
